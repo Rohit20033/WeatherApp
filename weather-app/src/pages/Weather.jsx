@@ -12,11 +12,11 @@ import {
   InputGroup,
   InputRightElement,
   Tooltip,
-  Button, // Add Button from Chakra UI
+  Button, 
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const apiKey = '860544db51b4368b66b90ebe782777c6'; // Replace with your API key
+const apiKey = '860544db51b4368b66b90ebe782777c6'; 
 
 const Weather = () => {
   const [loading, setLoading] = useState(false);
@@ -28,13 +28,13 @@ const Weather = () => {
 
   const handleSearch = () => {
     setLoading(true);
-    setShowResults(false); // Hide previous results while loading new data
+    setShowResults(false); 
     fetchData();
   };
 
   const handleBack = () => {
     setSearchTerm('');
-    setShowResults(false); // Hide the weather result and show the search input again
+    setShowResults(false); 
   };
 
   const handleKeyPress = (e) => {
@@ -60,19 +60,18 @@ const Weather = () => {
 
   useEffect(() => {
     if (Object.keys(weatherData).length === 0 && searchTerm && showResults) {
-      // If no weather data and search term is provided and showResults is true, fetch the weather data
       setLoading(true);
       fetchData();
     }
   }, [searchTerm, showResults]);
 
   const { name, main, weather } = weatherData;
-  const temp = Math.round(main?.temp - 273.15) || ''; // Fixed the variable name to 'temp'
+  const temp = Math.round(main?.temp - 273.15) || ''; 
   const description = weather?.[0]?.description || '';
   const iconCode = weather?.[0]?.icon || '';
   const weatherIconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
-  // Get weather condition to dynamically set the background image
+ 
   const weatherCondition = weather?.[0]?.main?.toLowerCase() || '';
   const weatherImages = {
     clear: 'https://wallpapers.com/images/hd/sunny-weather-with-cherry-blossom-fr2tn0f21evp0viw.jpg',
