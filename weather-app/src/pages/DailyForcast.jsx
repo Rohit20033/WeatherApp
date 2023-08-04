@@ -12,7 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 
-const apiKey = '860544db51b4368b66b90ebe782777c6'; // Replace with your API key
+const apiKey = '860544db51b4368b66b90ebe782777c6'; 
 
 const DailyForecast = () => {
   const [loading, setLoading] = useState(false);
@@ -56,8 +56,8 @@ const DailyForecast = () => {
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      fontSize="xl" // Adjust the default font size
-      px={4} // Add some horizontal padding to improve responsiveness
+      fontSize="xl" 
+      px={4} 
     >
       <Link to="/">
         <ChevronLeftIcon boxSize={6} mb={2} />
@@ -84,12 +84,12 @@ const DailyForecast = () => {
       ) : (
         <Flex
           direction="row"
-          flexWrap="wrap" // Allow items to wrap to a new line
+          flexWrap="wrap"
           justifyContent="center"
           mt={4}
-          width="100%" // Set the width of the result box to 100%
+          width="100%" 
           mx="auto"
-          overflowX="auto" // Enable horizontal scrolling if needed
+          overflowX="auto" 
         >
           {forecastData.map((day, index) => (
             <Box
@@ -101,8 +101,8 @@ const DailyForecast = () => {
               mx={1}
               textAlign="center"
               flexGrow={1}
-              minW="150px" // Set the minimum width of each result box
-              maxW="200px" // Set the maximum width of each result box
+              minW="150px" 
+              maxW="200px" 
               opacity={0.9}
             >
               <Box fontSize="lg" fontWeight="bold" mb={2}>
@@ -122,11 +122,11 @@ const DailyForecast = () => {
                   bottom="0"
                   left="0"
                   right="0"
-                  p={1} // Reduce padding to fit temperature inside the box
+                  p={1} 
                   bg="rgba(0, 0, 0, 0.7)"
                   color="white"
                   fontWeight="bold"
-                  fontSize="sm" // Reduce font size to fit temperature inside the box
+                  fontSize="sm" 
                 >
                   {day.temp.day} °C
                 </Box>
